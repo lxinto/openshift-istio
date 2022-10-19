@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minigame-deployment
+  namespace: lkhintibidze
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minigame
+  template:
+    metadata:
+      labels:
+        app: minigame
+      annotations:
+        sidecar.istio.io/inject: 'true'
+    spec:
+      containers:
+        - name: minigame
+          labels:
+            app: minigame
+          image: 'nexus.devops.tbc:9443/gmaghlakelidze_dockerpractice/docker-supermario:1.0.0'
+

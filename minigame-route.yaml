@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  namespaces: lkhintibidze
+  name: minigame-route
+spec:
+  host: xinto-minigame.apps.osh.devops.tbc
+  path: "/"
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: minigame-service
+

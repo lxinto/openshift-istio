@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: minigame-virtual-service
+  namespace: lkhintibidze
+spec:
+  gateways:
+    - minigame-gateway
+  hosts:
+    - minigame.apps.osh.devops.tbc
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: minigame-service
+~
+

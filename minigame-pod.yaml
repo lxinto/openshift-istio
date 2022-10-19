@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: minigame
+  name: minigame-pod
+  namespace: lkhintibidze
+spec:
+  containers:
+   - name: minigame
+     image: nexus.devops.tbc:9443/gmaghlakelidze_dockerpractice/docker-supermario:1.0.0
+     resources:
+       requests:
+         memory:
+         cpu:
+       limit:
+         memory:
+         cpu:
+     ports:
+       - name: containerport
+         protocol: TCP
+         containerPort: 8080
+
